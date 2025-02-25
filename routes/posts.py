@@ -32,7 +32,7 @@ def add_post(
     )
 
 @router.get("/")
-@cache(expire=300)
+@cache(expire=60 * 5)
 def get_posts(
         user: UserModel = Depends(get_current_user),
         db: Session = Depends(get_db)
